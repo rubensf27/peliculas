@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peliculas/themes/app_theme.dart';
 import 'screens/_screens.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Películas',
       initialRoute: 'home',
+      theme: AppTheme.light(),
       routes: {
         'home': (_) {
           return HomeScreen();
