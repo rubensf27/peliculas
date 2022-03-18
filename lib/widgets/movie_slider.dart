@@ -9,8 +9,8 @@ class MovieSlider extends StatelessWidget {
       color: Colors.red,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Padding(
+        children: [
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text('Populares',
                 style: TextStyle(
@@ -18,7 +18,31 @@ class MovieSlider extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 )),
           ),
+          Expanded(
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (_, int i) => const _MoviePoster(),
+              itemCount: 20,
+            ),
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class _MoviePoster extends StatelessWidget {
+  const _MoviePoster({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 130,
+      height: 190,
+      color: Colors.purple,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 10,
       ),
     );
   }
